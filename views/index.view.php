@@ -4,9 +4,12 @@ require_once '../config/autoloader.php';
 require_once '../config/db_connect.php';
 require_once '../models/Product.php';
 require_once '../models/User.php';
+require_once '../config/functions.php';
 
 $products = Product::getAllProducts($db);
 $users = User::getAllUser($db);
+
+$title = e("Willkommen bei getITnow");
 
 
 ?>
@@ -18,7 +21,7 @@ $users = User::getAllUser($db);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
-    <title>getItnow</title>
+    <title><?= $title ?></title>
 </head>
 
 <body>
@@ -29,6 +32,9 @@ $users = User::getAllUser($db);
             <li><a href="/views/login.view.php">Login</a></li>
         </ul>
     </div>
+
+    <h1><?= $title ?></h1>
+
     <div id="container">
         <h2>Produkte:</h2>
         <ul>

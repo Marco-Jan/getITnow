@@ -1,9 +1,11 @@
 <?php
 require_once '../config/autoloader.php';
 require_once '../config/db_connect.php';
+require_once '../config/functions.php';
 require_once '../models/Category.php';
 
 $categories = Category::getAll($db);
+$title = e("Produkt Kategorien");
 
 ?>
 
@@ -13,8 +15,7 @@ $categories = Category::getAll($db);
 <head>
     <link rel="stylesheet" href="../style.css">
 
-    <title>
-        Produkt Kategorien
+    <title><?= $title ?>
     </title>
 </head>
 <div id="navbar">
@@ -25,7 +26,7 @@ $categories = Category::getAll($db);
         <li><a href="/views/login.view.php">Login</a></li>
     </ul>
 </div>
-<h1>Produkt Kategorien</h1>
+<h1><?= $title ?></h1>
 
 <ul>
     <?php foreach ($categories as $category): ?>

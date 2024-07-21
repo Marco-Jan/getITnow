@@ -1,6 +1,8 @@
 <?php
 
-$title = "Admin Dashboard";
+require_once '../../../config/functions.php';
+
+$title = e("Admin Dashboard");
 
 ?>
 
@@ -23,14 +25,15 @@ $title = "Admin Dashboard";
         </ul>
     </div>
 
-    <h1 style="margin: 20px;"><?= $title ?></h1>
+    <h1 style="margin: 20px; color: <?= $color ?>
+    "><?= $title ?></h1>
 
     <?php if (isset($_GET['success'])): ?>
         <p>Produkt erfolgreich hinzugefügt!</p>
     <?php elseif (isset($_GET['error'])): ?>
         <p>Fehler beim Hinzufügen des Produkts. Bitte alle Felder ausfüllen.</p>
     <?php endif; ?>
-    <div id="adminViewContainer">
+    <div class="adminViewContainer">
         <form action="../../controller/productController.php" method="POST" enctype="multipart/form-data">
             <label for="name">Produktname</label>
             <input type="text" name="name" id="name">

@@ -3,10 +3,12 @@
 require_once '../config/autoloader.php';
 require_once '../config/db_connect.php';
 require_once '../models/Product.php';
+require_once '../config/functions.php';
+
 
 
 $products = Product::getAllProducts($db);
-
+$title = e("Unsere Produkte");
 
 ?>
 
@@ -16,7 +18,7 @@ $products = Product::getAllProducts($db);
 <head>
     <link rel="stylesheet" href="../style.css">
 
-    <title>Produkte</title>
+    <title><?= $title?></title>
 </head>
 <div id="navbar">
     <ul>
@@ -28,7 +30,7 @@ $products = Product::getAllProducts($db);
 </div>
 
 <body>
-    <h1>Unsere Produkte</h1>
+    <h1><?= $title?></h1>
     <ul>
         <div class="productCard">
             <?php foreach ($products as $product): ?>

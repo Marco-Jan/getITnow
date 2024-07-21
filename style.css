@@ -89,8 +89,16 @@ input {
     background-color: aqua;
 }
 
-#adminViewContainer{
-    background-color: rgb(204, 128, 28);
+form{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.adminViewContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
