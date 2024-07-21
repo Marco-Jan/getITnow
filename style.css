@@ -88,3 +88,9 @@ input {
 #subBtn:hover {
     background-color: aqua;
 }
+
+#adminViewContainer{
+    background-color: rgb(204, 128, 28);
+    display: flex;
+    flex-direction: column;
+}
